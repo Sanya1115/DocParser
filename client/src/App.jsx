@@ -30,7 +30,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/summary?length=${summaryLength}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/summary?length=${summaryLength}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
