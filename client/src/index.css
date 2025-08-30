@@ -1,0 +1,79 @@
+:root {
+  --primary-color: #8c52ff;
+  --primary-color-glow: rgba(140, 82, 255, 0.7);
+  --accent-color: #ff00ff; 
+  --accent-color-light: #ff69b4;
+  --bg-color: #0d1117;
+  --text-color: #e0e0e0; 
+  --text-color-secondary: #a0a0a0; 
+  --text-color-disabled: #606060; 
+  --card-bg: #161b22; 
+  --border-color: #2b3036;
+  --border-color-light: #30363d;
+  --bg-secondary: #1f242a; 
+
+  --container-shadow: 0 0 30px rgba(140, 82, 255, 0.3);
+  --section-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --button-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --input-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  --summary-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  --button-icon-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  --button-icon-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  --button-gradient: linear-gradient(45deg, #8c52ff, #ff00ff);
+  --button-gradient-hover: linear-gradient(45deg, #ff00ff, #8c52ff);
+  --disabled-gradient: linear-gradient(45deg, #4a4a4a, #6a6a6a);
+}
+
+[data-theme="light"] {
+  --primary-color: #6a1aeb; 
+  --primary-color-glow: rgba(106, 26, 235, 0.3);
+  --accent-color: #c200c2; 
+  --accent-color-light: #ff69b4;
+  --bg-color: #f0f2f5;
+  --text-color: #212121;
+  --text-color-secondary: #757575;
+  --text-color-disabled: #a0a0a0;
+  --card-bg: #ffffff;
+  --border-color: #ccc;
+  --border-color-light: #e0e0e0;
+  --bg-secondary: #e9ecef;
+  
+  --container-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  --section-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --button-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.15);
+  --input-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  --summary-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  --button-icon-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --button-icon-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+  --button-gradient: linear-gradient(45deg, #6a1aeb, #c200c2);
+  --button-gradient-hover: linear-gradient(45deg, #c200c2, #6a1aeb);
+  --disabled-gradient: linear-gradient(45deg, #d0d0d0, #e0e0e0);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  transition: color 0.4s ease-in-out;
+}
+
+button, select {
+  font-family: inherit;
+}
