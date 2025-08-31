@@ -1,35 +1,32 @@
 DocParser: Document Summarization Tool
 Live Deployment: https://doc-parser-mu.vercel.app/
 
-DocParser is a web application that allows users to upload documents (PDFs and images) and get a summarized version of the content. It leverages Tesseract.js for OCR (Optical Character Recognition) to extract text from the files and the Gemini API for generating the summaries.
+DocParser is a web application that allows users to upload documents (PDFs and images) and receive AI-generated summaries. It uses Tesseract.js for OCR (Optical Character Recognition) and the Gemini API for summarization.
 
 Features
-Document Upload: Easily upload PDF and image files.
+Document Upload: Upload PDF and image files with ease.
 
-Text Extraction: Uses OCR to extract text from the uploaded documents.
+Text Extraction: OCR-powered text extraction using Tesseract.js.
 
-AI-Powered Summarization: Generates a summary of the document using the Gemini AI model.
+AI Summarization: Summarize documents using Gemini AI.
 
-Adjustable Summary Length: Choose between short, medium, and long summaries.
+Adjustable Summary Length: Choose between short, medium, or long summaries.
 
-Theming: A toggle to switch between dark and light themes.
+Theming: Toggle between dark and light modes.
 
-Tools: Copy the summarized text to the clipboard or download it as a text file.
+Tools: Copy summaries to clipboard or download as a .txt file.
 
 Project Structure
-client/: The frontend React application.
+client/
+  └── src/
+      ├── App.jsx
+      ├── App.css
+      └── index.css
 
-src/App.jsx: The main React component with all the application logic and UI.
-
-src/App.css: The main CSS file for styling the application.
-
-src/index.css: Global CSS variables for theming.
-
-server/: The backend Node.js server.
-
-server.js: The main server file that sets up the Express application and routes.
-
-routes/summary.js: Handles the API endpoint for file upload and summarization.
+server/
+  ├── server.js
+  └── routes/
+      └── summary.js
 
 Setup and Installation
 Prerequisites
@@ -38,12 +35,14 @@ Node.js (version 16 or later)
 npm or yarn
 
 Steps
-Clone the repository and navigate into the project directory.
+Clone the repository and navigate into the project directory:
+
+git clone [https://github.com/your-username/docparser.git](https://github.com/your-username/docparser.git)
+cd docparser
 
 Install backend dependencies:
 
 npm install
-
 
 Install frontend dependencies:
 
@@ -51,47 +50,64 @@ cd client
 npm install
 cd ..
 
-
 Configure environment variables:
+Create a .env file in the root directory and add your Gemini API key:
 
-Create a .env file in the root directory.
+GEMINI_API_KEY=your-gemini-api-key
 
-Add your Gemini API key to this file:
-
-GEMINI_API_KEY=YOUR_API_KEY_HERE
-
-
-Run the application:
-
-Start the backend server:
-
+Run the Application
+Start the Backend Server
 npm run server
 
-
-In a new terminal, start the frontend development server:
-
+Start the Frontend Development Server (in a new terminal)
 cd client
 npm run dev
 
-
-The application will be available at http://localhost:5173.
+The app will be available at: http://localhost:5173
 
 Usage
-Drag and drop a file onto the upload zone or click "Choose File" to select one.
+Upload a Document
+Drag and drop a file onto the upload zone or click Choose File to select a PDF or image.
 
-Choose your desired summary length from the dropdown.
+Select Summary Length
+Use the dropdown to choose between short, medium, or long summaries.
 
-Click the "Generate Summary" button.
+Generate Summary
+Click the Generate Summary button to start the summarization process.
 
-Wait for the summary to appear in the right-hand panel.
+View the Result
+The summary will appear in the right-hand panel once processing is complete.
 
-Use the copy or download buttons to save the summary.
+Save or Share
+Use the Copy button to copy the summary to your clipboard, or click Download to save it as a .txt file.
 
-API Endpoints
-POST /api/summary: Handles file uploads, text extraction, and summarization.
+API Endpoint
+POST /api/summary
+This endpoint handles file uploads, performs OCR-based text extraction, and returns an AI-generated summary.
 
-Query Parameters: length (optional, can be 'short', 'medium', or 'long')
+Query Parameters
+length (optional):
+Accepts 'short', 'medium', or 'long' to control the summary length.
 
-Request Body: multipart/form-data with a file field.
+Request Body
+Content-Type: multipart/form-data
 
-Response: A JSON object with the text of the summary.
+Required field: file (PDF or image)
+
+Response
+Returns a JSON object containing the generated summary.
+
+{
+  "summary": "Your summarized text here..."
+}
+
+Tech Stack
+React – Frontend framework for building the user interface
+
+Node.js – Runtime environment for the backend server
+
+Express – Web framework for handling API routes and server logic
+
+Tesseract.js – OCR library for extracting text from PDFs and images
+
+Gemini API – AI model used for generating document summaries
